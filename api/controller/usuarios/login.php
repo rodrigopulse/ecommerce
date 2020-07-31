@@ -26,7 +26,7 @@ function login() {
       $payload = ['email' => $usuario['email']];
       $payload = json_encode($payload);
       $payload = base64_encode($payload);
-      $signature = hash_hmac('sha256',"$header.$payload",'$ab45febebt#224R0',true);
+      $signature = hash_hmac('sha256', "$header.$payload", $GLOBALS['JWT_HASH'], true);
       $signature = base64_encode($signature);
       $token = "$header.$payload.$signature";
       $usuario['senha'] = '';

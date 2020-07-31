@@ -1,11 +1,12 @@
 <?php
-include('route.php');
+include 'route.php';
+include 'config.php';
 
 // Produtos
-include('./controller/produtos/getTodos.php');
+include './controller/produtos/getTodos.php';
 // Usuários
-include('./controller/usuarios/criarUsuario.php');
-include('./controller/usuarios/login.php');
+include './controller/usuarios/criarUsuario.php';
+include './controller/usuarios/login.php';
 
 // Home
 Route::add('/',function(){ echo 'Olá :-)'; });
