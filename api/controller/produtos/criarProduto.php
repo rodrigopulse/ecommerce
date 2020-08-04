@@ -13,9 +13,9 @@ function criarProduto() {
   $db = $database->getConnection();
   $produto = new Produto($db);
 
-  $titulo = $_POST['titulo'];
+  $data = json_decode(file_get_contents("php://input"));
 
-  $produto->titulo = $titulo;
+  $produto->titulo = $data->titulo;
 
   if( $resposta = $produto->criarProduto() ) {
     http_response_code(201);
